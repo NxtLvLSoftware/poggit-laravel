@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index')->name('home');
+
+//auth
+Route::group(['prefix' => 'auth', 'as' => 'auth.', 'namespace' => 'Auth'], function () {
+    //logout
+    Route::post('/logout', 'LoginController@logout')->name('logout');
+
+    //github oath
+    Route::group(['prefix' => 'github', 'as' => 'github'], function () {
+        Route::get('/', 'LoginController@redirectToProvider');
+        Route::get('callback', 'LoginController@githubCallback')->name('.callback');
+    });
 });
+
