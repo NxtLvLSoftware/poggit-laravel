@@ -19,3 +19,32 @@ img {
     }
 }
 
+.dropdown-item {
+    svg {
+        @extend .mr-1;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .navbar-nav {
+        .nav-item .nav-link {
+            text-align: center;
+            font-size: large;
+        }
+        .dropdown {
+            position: static;
+            text-align: center;
+            .dropdown-menu {
+                width: 100%;
+                text-align: center;
+                line-height: 2rem;
+            }
+        }
+    }
+}
