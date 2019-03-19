@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => 'webhook', 'as' => 'webhook.'], function () {
+    Route::group(['prefix' => 'github', 'as' => 'github'], function () {
+        Route::post('/', function (Request $request) {
+            Log::debug($request);
+        });
+    });
+
+});
