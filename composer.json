@@ -10,9 +10,11 @@
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
+        "graham-campbell/github": "^7.6",
         "laravel/framework": "5.8.*",
         "laravel/socialite": "^4.1",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "php-http/guzzle6-adapter": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
