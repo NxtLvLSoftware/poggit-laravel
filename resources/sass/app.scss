@@ -24,6 +24,16 @@ img {
         @extend .mr-1;
     }
 }
+.navbar {
+    .navbar-brand {
+        font-size: 1.6rem;
+        .navbar-logo {
+            width: 48px;
+            height: 48px;
+            margin-right: 0.4rem;
+        }
+    }
+}
 
 @media (max-width: #{map-get($grid-breakpoints, md)}) {
     .navbar {
