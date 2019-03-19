@@ -95,9 +95,10 @@ class LoginController extends Controller
     protected function register(OauthUser $oauth): void
     {
         $user = User::create([
-            'username' => $oauth->nickname,
+            'username' => $oauth->name,
             'email' => $oauth->email,
             'github_id' => $oauth->id,
+            'github_nick' => $oauth->nickname,
             'github_token' => $oauth->token,
         ]);
 

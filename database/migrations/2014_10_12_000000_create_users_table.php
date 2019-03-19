@@ -13,6 +13,7 @@ class CreateUsersTable extends Migration
             $table->string('username');
             $table->string('email')->unique();
             $table->unsignedBigInteger('github_id');
+            $table->string('github_nick');
             $table->string('github_token');
             $table->rememberToken();
             $table->timestamps();
