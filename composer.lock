@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eefe660a30fd971049ea6b976a3441b9",
+    "content-hash": "d63ed3d1bdea7cac75145f60be43d838",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -5808,6 +5808,61 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2017-04-07T12:08:54+00:00"
+        },
+        {
+            "name": "tutorigo/laravel-ide-macros",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KristofMorva/laravel-ide-macros.git",
+                "reference": "ef40cd66dd50e57d6e60e7986aa910984790d143"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KristofMorva/laravel-ide-macros/zipball/ef40cd66dd50e57d6e60e7986aa910984790d143",
+                "reference": "ef40cd66dd50e57d6e60e7986aa910984790d143",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tutorigo\\LaravelMacroHelper\\IdeMacrosServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tutorigo\\LaravelMacroHelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kristóf Morva",
+                    "email": "kristof92@gmail.com"
+                }
+            ],
+            "description": "Generating a helper file for IDEs to support Laravel's macros.",
+            "keywords": [
+                "autocomplete",
+                "codeintel",
+                "helper",
+                "ide",
+                "laravel",
+                "macros",
+                "netbeans",
+                "phpdoc",
+                "phpstorm",
+                "sublime"
+            ],
+            "time": "2019-03-04T09:40:50+00:00"
         },
         {
             "name": "webmozart/assert",

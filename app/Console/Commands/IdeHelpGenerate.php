@@ -33,5 +33,6 @@ class IdeHelpGenerate extends Command
         Artisan::call('ide-helper:generate');
         Artisan::call('ide-helper:models --nowrite');
         Artisan::call('ide-helper:meta');
+        Artisan::call('ide-helper:macros');
     }
 }

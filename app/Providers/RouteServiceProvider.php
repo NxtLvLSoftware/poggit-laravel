@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -23,7 +24,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->registerMacros();
 
         parent::boot();
     }
@@ -69,5 +70,23 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Explicitly register our macros so our IDE tools can generate stubs for auto-completion.
+     */
+    protected function registerMacros(): void
+    {
+        RedirectResponse::macro('withSuccess', function (string $message) {
+            return $this->with('success', $message);
+        });
+
+        RedirectResponse::macro('withWarning', function (string $message) {
+            return $this->with('warning', $message);
+        });
+
+        RedirectResponse::macro('withError', function (string $message) {
+            return $this->with('error', $message);
+        });
     }
 }
