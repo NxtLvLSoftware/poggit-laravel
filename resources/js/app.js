@@ -31,3 +31,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
+// remove the entire alert container from the dom once closed
+$('.alert').on('closed.bs.alert', function () {
+    $('#' + $(this).attr('alert-type') + '-alert-container').remove();
+});
