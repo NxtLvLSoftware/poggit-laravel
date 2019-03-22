@@ -1,3 +1,12 @@
+<div class="nav-item">
+    <a class="nav-link" href="{{ route('releases') }}">Releases</a>
+</div>
+<div class="nav-item">
+    <a class="nav-link" href="#">Dev</a>
+</div>
+<div class="nav-item">
+    <a class="nav-link" href="#">About</a>
+</div>
 @guest
     <div class="nav-item">
         <a class="nav-link" href="{{ route('auth.github') }}">{{ __('Login') }}</a>

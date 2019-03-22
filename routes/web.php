@@ -25,3 +25,7 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.', 'namespace' => 'Auth'], funct
     });
 });
 
+//releases
+Route::group(['as' => 'releases'], function () {
+    Route::get('releases', 'ReleasesController@index');
+});

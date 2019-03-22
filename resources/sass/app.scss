@@ -58,3 +58,68 @@ img {
         }
     }
 }
+
+.release-card {
+    @extend .card;
+    padding: 0.5rem !important;
+    .first-row {
+        @extend .row;
+        @extend .no-gutters;
+        .col {
+            img {
+                width: 56px;
+                height: 56px;
+            }
+            p {
+                line-height: 5px;
+                text-align: right;
+                margin-top: 0.5rem !important;
+                &.downloads {
+                }
+                &.rating {
+                    @extend .text-nowrap;
+                    svg {
+                        &.filled {
+                            color: #ffe771;
+                        }
+                    }
+                }
+                &.subtitle {
+                    line-height: 2px;
+                    font-size: 10px;
+                    color: $gray-700;
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+    .second-row {
+        @extend .row;
+        @extend .no-gutters;
+        .col {
+            padding-left: 0.5rem;
+            h5 {
+                &.name {
+                    font-weight: bolder;
+                }
+            }
+            p {
+                line-height: 5px;
+                text-align: left;
+                margin-top: 0.5rem !important;
+                @extend .text-nowrap;
+                &.version {
+                }
+                &.author {
+                    line-height: 2px;
+                    //font-size: 10px;
+                    color: $gray-700;
+                    opacity: 0.7;
+                }
+            }
+            a {
+                margin: 0.5rem;
+            }
+        }
+    }
+}
