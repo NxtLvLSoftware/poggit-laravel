@@ -17,9 +17,14 @@ class Repository extends Model
         'active' => 'bool',
     ];
 
-    public function user()
+    public function owner()
     {
-        return $this->belongsTo(User::class);
+        return $this->morphTo('owner');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'repository_users', 'repository_id', 'user_id')->withPivot('role');
     }
 
     public function scopePublic(Builder $builder)

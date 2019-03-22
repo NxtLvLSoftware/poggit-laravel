@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Traits\HasKnownIps;
+use App\Models\Traits\HasOrganizations;
 use App\Models\Traits\HasRepositories;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -10,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasKnownIps, HasRepositories;
+    use Notifiable, HasKnownIps, HasOrganizations, HasRepositories;
 
     /**
      * The attributes that are mass assignable.

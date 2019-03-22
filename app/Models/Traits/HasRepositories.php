@@ -8,6 +8,6 @@ trait HasRepositories
 {
     public function repositories()
     {
-        return $this->hasMany(Repository::class);
+        return $this->belongsToMany(Repository::class, 'repository_users', 'user_id', 'repo_id')->withPivot('role');
     }
 }

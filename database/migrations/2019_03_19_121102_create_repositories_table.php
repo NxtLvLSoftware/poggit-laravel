@@ -10,7 +10,8 @@ class CreateRepositoriesTable extends Migration
     {
         Schema::create('repositories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->index();
+            $table->unsignedBigInteger('owner_id')->index();
+            $table->string('owner_type'); //user or org
             $table->unsignedBigInteger('github_id')->index();
             $table->string('name');
             $table->string('full_name');
@@ -19,8 +20,6 @@ class CreateRepositoriesTable extends Migration
             $table->boolean('revoked')->default(false);
             $table->boolean('active')->default(false);
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
