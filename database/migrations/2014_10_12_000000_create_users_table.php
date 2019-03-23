@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->unsignedBigInteger('github_id')->index()->unique();
             $table->string('github_nick');
-            $table->string('github_token');
+            $table->string('github_token')->nullable();
             $table->string('installation_type')->nullable(); //all repositories or selected
             $table->timestamps();
         });
