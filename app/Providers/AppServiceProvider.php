@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerRepositories();
     }
 
     /**
@@ -24,5 +24,21 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+    }
+
+    /**
+     * Add the model repositories into the service container.
+     */
+    protected function registerRepositories(): void
+    {
+        $repositories = [
+            'UserRepository',
+            'OrganizationRepository',
+            'RepositoryRepository',
+        ];
+
+        foreach ($repositories as $contract => $concrete) {
+            $this->app->singleton('\App\Contracts\Repositories\\' . $contract, '\App\Repositories\\' . $concrete);
+        }
     }
 }
